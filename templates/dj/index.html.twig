@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dj index{% endblock %}
+
+{% block body %}
+    <h1>Dj index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dj in djs %}
+            <tr>
+                <td>{{ dj.id }}</td>
+                <td>{{ dj.firstname }}</td>
+                <td>{{ dj.lastname }}</td>
+                <td>
+                    <a href="{{ path('app_dj_show', {'id': dj.id}) }}">show</a>
+                    <a href="{{ path('app_dj_edit', {'id': dj.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_dj_new') }}">Create new</a>
+{% endblock %}

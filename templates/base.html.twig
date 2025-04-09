@@ -21,7 +21,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link {% if app.request.pathinfo == path('home') %}active{% endif %}" aria-current="page" href={{ path('home') }}>Home</a>
+                        <a class="nav-link {% if app.request.pathinfo == path('home') %}active{% endif %}" href={{ path('home') }}>Home</a>
+                        <a class="nav-link {% if app.request.pathinfo == path('app_party_index') %}active{% endif %}" href={{ path('app_party_index') }}>Parties</a>
                         <a class="nav-link {% if app.request.pathinfo == path('contact') %}active{% endif %}" href={{ path('contact') }}>Contact</a>
                         <a class="nav-link {% if app.request.pathinfo == path('about') %}active{% endif %}" href={{ path('about') }}>About</a>
                     </div>
